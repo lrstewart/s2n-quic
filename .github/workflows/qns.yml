@@ -561,10 +561,10 @@ jobs:
     permissions:
       actions: write
     env:
-      GH_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{github.token}}
     steps:
       - uses: actions/checkout@v5
-      - run: gh workflow run retry.yml --ref ${{github.sha}} -F run_id=${{ github.run_id }}
+      - run: gh workflow run retry.yml -F run_id=${{github.run_id}}
 
   qns-status-report:
     runs-on: ubuntu-latest
